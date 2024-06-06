@@ -7,8 +7,34 @@
     <title>Full Mobile</title>
 </head>
 <body>
-    <header class="cabecario">
-        <h1>Onboarding</h1>
-    </header>
+    <div id="mensagem"></div>
+    <div id="conteudo">
+        <header class="cabecario">
+            <h1>Onboarding</h1>
+        </header>
+    
+        <div class="container">
+            <input class="input-nome" type="text" placeholder="Name">
+            
+           <select class="opcoes-gender" name="gender" id="gender">
+            <option value="" disabled selected>Select your genus</option>
+            <option value="">Girl</option>
+            <option value="">Boy</option>
+            <option value="othe">Othe</option>
+           </select>
+        </div>
+    </div>
+    <div class="mensagem-temp">
+        <h2>HIGLHLIGHTS</h2>
+    </div>
+    
+
+
+    <script>
+        setTimeout(function() {
+            document.getElementById('mensagem').style.display = 'none';
+            document.getElementById('conteudo').style.display = 'block';
+        }, 5000); // 5000 milissegundos = 5 segundos
+    </script>
 </body>
 </html>
