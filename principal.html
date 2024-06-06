@@ -3,9 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="principal.css">
     <title>Document</title>
 </head>
 <body>
-    <H1>APENAS TESTE</H1>
+    <header id="header">
+        <nav id="nav">
+          <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="" aria-expanded="false">
+            <span id="hamburger"></span>
+          </button>
+          <ul id="menu">
+            <li><a href="/">Sobre</a></li>
+            <li><a href="/">Tattoos</a></li>
+            <li><a href="/">Nosso estudio</a></li>
+            <li><a href="/">Conta</a></li>
+          </ul>
+        </nav>
+      </header>
+
+
+
+      <script>
+        const btnMobile = document.getElementById('btn-mobile');
+
+function toggleMenu(event) {
+  if (event.type === 'touchstart') event.preventDefault();
+  const nav = document.getElementById('nav');
+  nav.classList.toggle('active');
+  const active = nav.classList.contains('active');
+  event.currentTarget.setAttribute('aria-expanded', active);
+  if (active) {
+    event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
+  } else {
+    event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
+  }
+}
+
+btnMobile.addEventListener('click', toggleMenu);
+btnMobile.addEventListener('touchstart', toggleMenu);
+      </script>
 </body>
 </html>
