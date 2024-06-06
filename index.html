@@ -7,7 +7,8 @@
     <title>Full Mobile</title>
 </head>
 <body>
-    <div id="mensagem"> <h2>HIGLHLIGHTS</h2></div>
+    <div id="mensagem"> <h2>INNOVATIVE<Br> <span class="minds">MINDS</span></h2>
+    <img class="logo" src="logo-removebg-preview.png" alt=""></div>
     <div id="conteudo">
         <header class="cabecario">
             <h1>Onboarding</h1>
@@ -48,6 +49,8 @@
                 <option value="">Português BR</option>
                 <option value="">Espanhol</option>
            </select>
+
+           <button id="btn" class="btn"><strong>Subimit Data</strong></button>
         </div>
     </div>
   
@@ -58,7 +61,11 @@
         setTimeout(function() {
             document.getElementById('mensagem').style.display = 'none';
             document.getElementById('conteudo').style.display = 'block';
-        }, 5000); // 5000 milissegundos = 5 segundos
+        }, 5000);
+
+        document.getElementById('btn').addEventListener('click', function(){
+            window.location.href = 'principal.html'
+        })
     </script>
 </body>
 </html>
