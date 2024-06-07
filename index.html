@@ -7,53 +7,50 @@
     <title>Full Mobile</title>
 </head>
 <body>
-    <div id="mensagem"> <h2>INNOVATIVE<Br> <span class="minds">MINDS</span></h2>
+    <div id="mensagem"> <h2>Nome da<Br> <span class="minds">Empresa</span></h2>
     <img class="logo" src="img/logo-removebg-preview.png" alt=""></div>
     <div id="conteudo">
         <header class="cabecario">
-            <h1>Onboarding</h1>
+            <h1>Seus Dados</h1>
         </header>
     
         <div class="container">
-
-            <input class="input-nome" type="text" placeholder="Name">
+            <input class="input-nome" type="text" placeholder="Name" id="name" required>
            
-            <select class="opcoes-gender" name="gender" id="gender">
-                <option value="" disabled selected>Select your genus</option>
-                <option value="">Girl</option>
-                <option value="">Boy</option>
-                <option value="othe">Othe</option>
-           </select>
-
-           <select class="opcoes-gender" name="country" id="country">
-                <option value="" disabled selected>Select your country</option>    
-                <option value="">Estados Unidos</option>
-                <option value="">Brasil</option>
-                <option value=""> Argentina</option>
-                <option value="">Austrália</option>
-                <option value="">Moçambique</option>
-                <option value="">Chile</option>
-                <option value="">Inglaterra</option>
-                <option value="">Cabo Verde</option>
-                <option value="">Cuba</option>
-                <option value="">Nova Zelândia</option>
-                <option value="">Portugal</option>
-                <option value="">México</option>
-                <option value="">Escócia</option>
-                <option value="">Angola</option>
-                <option value="">Espanha</option>
-           </select>
-
-           <select class="opcoes-gender" name="" id="">
-            <option value="" disabled selected>Select your linguage</option>
-                <option value="">Ingles</option>
-                <option value="">Português BR</option>
-                <option value="">Espanhol</option>
-           </select>
-
-           <button id="btn" class="btn"><strong>Subimit Data</strong></button>
+            <select class="opcoes-gender" name="gender" id="gender" required onchange="carregarImagem()">
+                <option value="" disabled selected>Selecione seu genero</option>
+                <option value="Girl">Girl</option>
+                <option value="Boy">Boy</option>
+            </select>
+    
+            <select class="opcoes-gender" name="country" id="country" required>
+                <option value="" disabled selected>Selecione seu pais</option>    
+                <option value="Estados Unidos">Estados Unidos</option>
+                <option value="Brasil">Brasil</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Austrália">Austrália</option>
+                <option value="Moçambique">Moçambique</option>
+                <option value="Chile">Chile</option>
+                <option value="Inglaterra">Inglaterra</option>
+                <option value="Cabo Verde">Cabo Verde</option>
+                <option value="Cuba">Cuba</option>
+                <option value="Nova Zelândia">Nova Zelândia</option>
+                <option value="Portugal">Portugal</option>
+                <option value="México">México</option>
+                <option value="Escócia">Escócia</option>
+                <option value="Angola">Angola</option>
+                <option value="Espanha">Espanha</option>
+            </select>
+    
+            <select class="opcoes-gender" name="language" id="language" required>
+                <option value="" disabled selected>Selecione sua lingua</option>
+                <option value="Inglês">Inglês</option>
+                <option value="Português BR">Português BR</option>
+                <option value="Espanhol">Espanhol</option>
+            </select>
+    
+            <button id="btn" class="btn" onClick="handleRegisterForm()"><strong>Entrar</strong></button>
         </div>
-    </div>
   
     
 
@@ -67,6 +64,26 @@
         document.getElementById('btn').addEventListener('click', function(){
             window.location.href = 'principal.html'
         })
+
+        function handleRegisterForm() {
+            // Capturar os valores dos campos
+            const nome = document.getElementById('name').value;
+            const genero = document.getElementById('gender').value;
+            const pais = document.getElementById('country').value;
+            const lingua = document.getElementById('language').value;
+
+            // Salvar os valores no localStorage
+            localStorage.setItem('nome', nome);
+            localStorage.setItem('genero', genero);
+            localStorage.setItem('pais', pais);
+            localStorage.setItem('lingua', lingua);
+
+        }
+
+        function carregarImagem() {
+            const gender = document.getElementById('gender').value;
+            localStorage.setItem('userGender', gender);
+        }
     </script>
 </body>
 </html>

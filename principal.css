@@ -42,7 +42,15 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #acacaa;
+  background-color: var(--cor-amarelo);
+  
+}
+
+.user{
+  right: 10px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
 }
 
 #menu {

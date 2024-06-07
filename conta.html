@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="conta.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="usuario">
+        <img class="img-user" id="user-homem" src="user-homem.png" alt="Imagem-Usuário Homem">
+        <img class="img-user" id="user-mulher" src="user-mulher.png" alt="Imagem-Usuário Mulher">
+    </div>
+    <div class="linha"></div>
+    <div class="informacao-user">
+        <p class="info-usuer" id="user-name">Nome:</p>
+        <p class="info-usuer" id="user-gender">Gênero: </p>
+        <p class="info-usuer" id="user-country">País: </p>
+        <p class="info-usuer" id="user-language">Língua: </p>
+    </div>
+
+    <script>
+         document.addEventListener('DOMContentLoaded', (event) => {
+           
+            const nome = localStorage.getItem('nome');
+            const genero = localStorage.getItem('genero');
+            const pais = localStorage.getItem('pais');
+            const lingua = localStorage.getItem('lingua');
+
+           
+            document.getElementById('user-name').textContent = `Nome: ${nome}`;
+            document.getElementById('user-gender').textContent = `Gênero: ${genero}`;
+            document.getElementById('user-country').textContent = `País: ${pais}`;
+            document.getElementById('user-language').textContent = `Língua: ${lingua}`;
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const userGender = localStorage.getItem('userGender');
+            if (userGender === 'Boy') {
+                document.getElementById('user-homem').style.display = 'block';
+                document.getElementById('user-gender').innerText = "Gênero: Homem";
+            } else if (userGender === 'Girl') {
+                document.getElementById('user-mulher').style.display = 'block';
+                document.getElementById('user-gender').innerText = "Gênero: Mulher";
+            }
+        });
+    </script>
+</body>
+</html>
