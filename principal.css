@@ -11,9 +11,7 @@
     --cor-amarelo: rgb(254, 194, 62);
 }
 
-body{
-    background-image: url(img/fundo-principal.jpeg);
-}
+
 body,
 ul {
   margin: 0px;
